@@ -32,7 +32,7 @@ Getting Started
         async with aiofiles.open(test, 'w') as f:
             await f.seek(0)
 
-        assert afs.Exists(filename)
+        assert afs.exists(filename)
 
 Contents
 --------

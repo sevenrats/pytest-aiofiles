@@ -17,10 +17,9 @@ def test_fake_os(fs):
 
 
 def test_fake_open(fs):
-    cls = FakeFileOpen(fs)
 
-    f = cls('/dev/urandom', 'rb')
+    f = open('/dev/urandom', 'rb')
     assert isinstance(f, BufferedReader)
 
-    f = cls('blah', 'wb')
+    f = open('blah', 'wb')
     assert isinstance(f, FakeFileWrapper)
