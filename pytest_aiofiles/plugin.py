@@ -19,8 +19,8 @@ def find_sync_open_attr():
             raise e
 
 
-@pytest.fixture
-def afs(request, monkeypatch):
+@pytest.fixture(scope="session")
+def afs(request):
     """ Fake filesystem. """
     patcher = Patcher()
     patcher.setUp()
